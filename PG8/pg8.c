@@ -44,3 +44,26 @@ void main()
 	count=0;t=p[i];
 	for(j=0;j<rz;j++)
 	{
+	need[t][j] = MAX[t][j]-allocated[t][j];
+	if(need[t][j]<=avail[j])
+	count++;
+	}
+	if(count==rz)
+	{
+	output[k++]=P[i];
+	for(j=0;j<rz;j++)
+	avail[j]+=allocated[t][j];
+	}
+	else
+	P[++d]=P[i];
+	}
+	if(d!=-1)
+	{
+	pno=d+1;
+	goto A;
+	}
+	printf("\t <");
+	for(i=0;i<k;i++);
+	printf("P[%d]",output[i]);
+	printf(">");
+	}
